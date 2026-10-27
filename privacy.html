@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VANLYFE Privacy Policy</title>
+<style>
+body { font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; background: #fff; max-width: 680px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-size: 2em; margin: 0 0 .4em; }
+h2 { font-size: 1.25em; margin: 1.8em 0 .4em; }
+a { color: #0a58ca; }
+nav { margin-bottom: 1.5em; }
+nav a { margin-right: 1em; }
+.muted { color: #666; font-size: .9em; }
+</style>
+</head>
+<body>
+<nav><a href="./">VANLYFE</a><a href="support.html">Support</a><a href="terms.html">Terms of Use</a></nav>
+<h1>Privacy Policy</h1>
+
+<h2>Summary</h2>
+<p>VANLYFE has no ads and no tracking. We never sell your data, and we don't share it with anyone for advertising. The only usage data we collect is the anonymous ping described under Usage ping.</p>
+
+<h2>Your location</h2>
+<p>Your location is used on your phone to find places near you. It stays on your phone unless you turn on Show me on the map (Settings › Travelers). Then the app sends your position to our server, rounded to about 1 km unless you choose Exact, and other travelers who also share can see it with your display name and status for up to 6 hours after your last update. If you also turn on Keep sharing when the app is closed, the app keeps sending it while the app is closed (when you move about 500 m on iPhone, about every 15 minutes on Android). Turning sharing off, signing out or deleting your account removes your position at once. When you search for a place by name or address, the search goes to Apple's MapKit search service.</p>
+<p>The Today tab shows the weather where you are. To do that, the app sends the coordinates of the area you are looking at (your location, unless you searched somewhere else) to the US National Weather Service (api.weather.gov), rounded to about 10 meters. If you tap Load live map, the same coordinates, rounded to about 100 meters, go to Windy (windy.com). No account details or device identifiers are sent with them.</p>
+<p>Air quality, cloud cover and tides send the same coordinates to Open-Meteo (open-meteo.com) and NOAA (tidesandcurrents.noaa.gov).</p>
+<p>If you turn on Alerts, your phone keeps its last location on the phone only and, about every 30 minutes, sends it to the National Weather Service and Open-Meteo to check for alerts.</p>
+<p>Along a route sends your start and destination to Apple Maps (iPhone) or the FOSSGIS OSRM server at routing.openstreetmap.de (Android).</p>
+
+<h2>Optional account</h2>
+<p>You can use every finding feature without an account. If you create one to contribute, we keep your email address, your password and a random user ID on our own Supabase server at vanlife-api.brokejokes.com. If you sign in with Google or Apple instead, we receive only your name and email address from them (Google: the openid, email and profile scopes) and use them only to create and sign in to your VANLYFE account; we never get your password there and never share this data. Passwords are stored hashed, never in plain text. Your email is used only to sign you in and to send sign-in and confirmation codes. If you turn on Show me on the map, we also keep the display name and status you enter, which other sharing travelers see.</p>
+<p>Tips you post are public and show no name.</p>
+
+<h2>What you contribute</h2>
+<ul>
+<li>Spots you add and edits you suggest are reviewed before they appear in the public map data.</li>
+<li>Photos you add are public as soon as they upload, and anyone can report them.</li>
+<li>Reports you send are stored with your user ID when you're signed in.</li>
+</ul>
+
+<h2>Usage ping</h2>
+<p>When you open the app, it sends a short ping to our server: a random install ID that the app makes up on first launch, whether it's the iPhone or Android app, and the app and operating system versions. The ID is not tied to your account or to your device, and deleting the app resets it. Cloudflare, which sits in front of our server, derives an approximate location from your IP address; our server keeps that city-level location (rounded to about 1 km), the country and the time of the ping, and does not store your IP address. We use this only to count how many people use VANLYFE and roughly where. Pings are deleted after 90 days.</p>
+
+<h2>Services that receive your device's IP address</h2>
+<p>When the app loads content, your phone connects directly to these services, which see your device's IP address like any website would:</p>
+<ul>
+<li>Cloudflare, which fronts our own server at vanlife-api.brokejokes.com and derives the city-level location described under Usage ping.</li>
+<li>GitHub Pages (place data).</li>
+<li>OpenFreeMap (map tiles).</li>
+<li>USGS The National Map (aerial and satellite imagery).</li>
+<li>Recreation.gov and The Dyrt (place photos).</li>
+<li>Google Street View, which also receives the place's coordinates (<a href="https://policies.google.com/privacy">Google Privacy Policy</a>).</li>
+<li>Google Maps 3D (the 3D view of a place), which also receives the coordinates of the place and of the area you look at in 3D, and collects device and app details, crash reports, an SDK identifier and your map gestures for Google's own use (<a href="https://policies.google.com/privacy">Google Privacy Policy</a>).</li>
+<li>Mapillary, which also receives the place's coordinates.</li>
+<li>KartaView and Panoramax (street-level photos), which receive the place's coordinates.</li>
+<li>Wikimedia Commons and Flickr (photos nearby and the Photos map layer), which receive the place's coordinates or the edges of the map area on screen.</li>
+<li>Google Maps Platform (Places UI Kit), which receives the place's name and coordinates (<a href="https://policies.google.com/privacy">Google Privacy Policy</a>).</li>
+<li>US National Weather Service (forecasts and alerts) and Windy (live weather map), which receive the coordinates described under Your location.</li>
+<li>NOAA map services (weather radar and alert map layers), which receive the edges of the map area on screen.</li>
+<li>National Interagency Fire Center and NASA FIRMS (wildfire data). These are nationwide downloads, and no coordinates are sent.</li>
+<li>Open-Meteo and NOAA Tides &amp; Currents (air quality, cloud cover and tides), which receive the coordinates described under Your location.</li>
+<li>BLM and NASA GIBS: map layer tiles of the area on screen.</li>
+<li>FOSSGIS OSRM (Android routes), which receives your start and destination.</li>
+</ul>
+<p>Street View, the 3D view, Mapillary, KartaView, Panoramax, Wikimedia Commons, Flickr and Google's Places UI Kit receive the coordinates of the place you are looking at, or of the map area on screen, not your own location. Links such as Open in Windy or Open in Zoom Earth open in your browser and pass along the coordinates shown on screen.</p>
+
+<h2>Deleting your data</h2>
+<p>In the app, open Settings › Account and tap Delete account. This removes your account, your photos and your traveler profile and position. Spots and edits already published in the map data stay, without any link to you. Clearing the app's storage, or deleting the app, removes everything stored on the phone.</p>
+
+<h2>Children</h2>
+<p>VANLYFE is not directed at children under 13.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:kevindpostal@gmail.com">kevindpostal@gmail.com</a>.</p>
+
+<p class="muted">Effective date: October 27, 2026.</p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VANLYFE</title>
+<style>
+body { font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; background: #fff; max-width: 680px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-size: 2em; margin: 0 0 .4em; }
+h2 { font-size: 1.25em; margin: 1.8em 0 .4em; }
+a { color: #0a58ca; }
+nav { margin-bottom: 1.5em; }
+nav a { margin-right: 1em; }
+.muted { color: #666; font-size: .9em; }
+.links { display: grid; gap: 12px; margin: 1.5em 0; }
+.links a { display: block; padding: 14px 18px; border: 1px solid #ccd; border-radius: 12px; text-decoration: none; font-weight: 600; }
+.links a.primary { background: #ffc400; border-color: #ffc400; color: #111; }
+</style>
+</head>
+<body>
+<nav><a href="./">VANLYFE</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
+<h1 id="name">Shared place</h1>
+<p id="incomplete" hidden>This link is incomplete.</p>
+<div id="links" class="links" hidden>
+  <a id="open-app" class="primary" href="#">Open in VANLYFE</a>
+  <a id="apple-maps" href="#">Apple Maps</a>
+  <a id="google-maps" href="#">Google Maps</a>
+  <a id="osm" href="#">OpenStreetMap</a>
+</div>
+<p class="muted">Shared from VANLYFE</p>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var uid = params.get("uid") || "";
+  var latText = params.get("lat"), lonText = params.get("lon");
+  var lat = latText === null || latText.trim() === "" ? NaN : Number(latText);
+  var lon = lonText === null || lonText.trim() === "" ? NaN : Number(lonText);
+  var name = (params.get("name") || "").trim();
+  var valid = /^[a-z0-9_]+:[^\s]{1,200}$/.test(uid) && isFinite(lat) && isFinite(lon) &&
+    lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180;
+  if (!valid) {
+    document.getElementById("name").hidden = true;
+    document.getElementById("incomplete").hidden = false;
+    return;
+  }
+  if (name) {
+    document.getElementById("name").textContent = name;
+    document.title = name + " · VANLYFE";
+  }
+  document.getElementById("open-app").href = "vanlyfe://place?uid=" + encodeURIComponent(uid) + "&lat=" + lat + "&lon=" + lon;
+  document.getElementById("apple-maps").href = "https://maps.apple.com/?ll=" + lat + "," + lon + "&q=" + encodeURIComponent(name || "Shared place");
+  document.getElementById("google-maps").href = "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lon;
+  document.getElementById("osm").href = "https://www.openstreetmap.org/?mlat=" + lat + "&mlon=" + lon + "#map=16/" + lat + "/" + lon;
+  document.getElementById("links").hidden = false;
+})();
+</script>
+</body>
+</html>
