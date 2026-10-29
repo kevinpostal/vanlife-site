@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VANLYFE</title>
+<meta name="theme-color" content="#0f1115">
+<link rel="icon" href="assets/gen/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/gen/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
+<meta name="vanlife-embed-key" content="AIzaSyCf6zVGnJ0Ii1yaxNO759JPV8WcVmd44ag">
+<style>
+.map { margin: 1.5em 0 0 }
+.map iframe { display:block; width:100%; height:320px; border:0; border-radius:12px; background:var(--rule) }
+.map-toggle { display:flex; gap:8px; margin-top:8px }
+.map-toggle button { font:inherit; padding:8px 14px; border:1px solid var(--rule-strong); border-radius:999px; background:transparent; color:var(--text); cursor:pointer }
+.map-toggle button[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:var(--on-accent) }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/gen/badge-64.png" width="32" height="32" alt="">VANLYFE</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#product">Product</a>
+      <a href="./#coverage">Coverage</a>
+      <a href="./#trust">Trust</a>
+      <a href="./#deck">Pitch deck</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="./#download">Get the app</a>
+  </div>
+</header>
+<main id="main" class="page"><div class="wrap prose">
+<h1 id="name">Shared place</h1>
+<p id="incomplete" hidden>This link is incomplete.</p>
+<div id="links" class="stack" hidden>
+  <a id="open-app" class="btn btn-primary" href="#">Open in VANLYFE</a>
+  <a id="apple-maps" class="btn" href="#">Apple Maps</a>
+  <a id="google-maps" class="btn" href="#">Google Maps</a>
+  <a id="osm" class="btn" href="#">OpenStreetMap</a>
+</div>
+<div id="map" class="map" hidden><iframe id="map-frame" title="Map of the shared place" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe><div class="map-toggle"><button type="button" id="map-road" aria-pressed="true">Map</button><button type="button" id="map-sat" aria-pressed="false">Satellite</button></div></div>
+<p class="muted">Shared from VANLYFE</p>
+</div></main>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var uid = params.get("uid") || "";
+  var latText = params.get("lat"), lonText = params.get("lon");
+  var lat = latText === null || latText.trim() === "" ? NaN : Number(latText);
+  var lon = lonText === null || lonText.trim() === "" ? NaN : Number(lonText);
+  var name = (params.get("name") || "").trim();
+  var valid = /^[a-z0-9_]+:[^\s]{1,200}$/.test(uid) && isFinite(lat) && isFinite(lon) &&
+    lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180;
+  if (!valid) {
+    document.getElementById("name").hidden = true;
+    document.getElementById("incomplete").hidden = false;
+    return;
+  }
+  if (name) {
+    document.getElementById("name").textContent = name;
+    document.title = name + " · VANLYFE";
+  }
+  document.getElementById("open-app").href = "vanlyfe://place?uid=" + encodeURIComponent(uid) + "&lat=" + lat + "&lon=" + lon;
+  document.getElementById("apple-maps").href = "https://maps.apple.com/?ll=" + lat + "," + lon + "&q=" + encodeURIComponent(name || "Shared place");
+  document.getElementById("google-maps").href = "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lon;
+  document.getElementById("osm").href = "https://www.openstreetmap.org/?mlat=" + lat + "&mlon=" + lon + "#map=16/" + lat + "/" + lon;
+  document.getElementById("links").hidden = false;
+  // Google's map of the place (Maps Embed API); builds without a key keep the placeholder and show no map.
+  var key = document.querySelector('meta[name="vanlife-embed-key"]').content;
+  if (!key || key.indexOf("__") === 0) return;
+  var frame = document.getElementById("map-frame");
+  var road = document.getElementById("map-road"), sat = document.getElementById("map-sat");
+  function show(satellite) {
+    frame.src = "https://www.google.com/maps/embed/v1/place?key=" + encodeURIComponent(key) + "&q=" + lat + "," + lon +
+      "&zoom=" + (satellite ? 18 : 16) + "&maptype=" + (satellite ? "satellite" : "roadmap");
+    road.setAttribute("aria-pressed", String(!satellite));
+    sat.setAttribute("aria-pressed", String(satellite));
+  }
+  road.onclick = function () { show(false); };
+  sat.onclick = function () { show(true); };
+  show(false);
+  document.getElementById("map").hidden = false;
+})();
+</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./"><img src="assets/gen/badge-64.png" width="32" height="32" alt="">VANLYFE</a>
+        <p class="tagline">Roam · Rest · Refill</p>
+        <p>A free, offline-first map of restrooms, water, camps, gas and help across the US.</p>
+      </div>
+      <nav aria-label="Product"><h2 class="footer-h">Product</h2><ul><li><a href="./#coverage">Coverage</a></li><li><a href="./#more">Today &amp; Events</a></li><li><a href="./#download">Get the app</a></li><li><a href="./#deck">Pitch deck</a></li></ul></nav>
+      <nav aria-label="Support"><h2 class="footer-h">Support</h2><ul><li><a href="support.html">Help &amp; FAQ</a></li><li><a href="support.html#delete-account">Delete your account</a></li><li><a href="mailto:kevindpostal@gmail.com">Contact</a></li></ul></nav>
+      <nav aria-label="Legal"><h2 class="footer-h">Legal</h2><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Kevin Postal</span><span>Map data © OpenStreetMap contributors</span></div>
+  </div>
+</footer>
+</body>
+</html>

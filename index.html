@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VANLYFE · Restrooms, water and free camps near you, even offline</title>
+<meta name="description" content="A free, offline-first map of restrooms, showers, water, free camps, cheap gas and help for people living out of a van, a car, or without housing. iPhone and Android, five languages, no ads, no tracking.">
+<link rel="canonical" href="https://kevinpostal.github.io/vanlife-site/">
+<meta name="theme-color" content="#0f1115">
+<link rel="icon" href="assets/gen/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/gen/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VANLYFE">
+<meta property="og:title" content="VANLYFE · Roam · Rest · Refill">
+<meta property="og:description" content="Restrooms, showers, water, free camps, cheap gas and help near you, even offline. Free on iPhone and Android.">
+<meta property="og:url" content="https://kevinpostal.github.io/vanlife-site/">
+<meta property="og:image" content="https://kevinpostal.github.io/vanlife-site/assets/gen/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VANLYFE badge and wordmark: restrooms, water and free camps">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"VANLYFE","operatingSystem":"Android, iOS","applicationCategory":"TravelApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://kevinpostal.github.io/vanlife-site/"}</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wc" viewBox="0 0 24 24"><path d="M5.5 22v-7.5H4V9c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2v5.5H9.5V22h-4zM18 22v-6h3l-2.54-7.63C18.18 7.55 17.42 7 16.56 7h-.12c-.86 0-1.63.55-1.9 1.37L12 16h3v6h3zM7.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm9 0c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/></symbol>
+  <symbol id="i-landscape" viewBox="0 0 24 24"><path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z"/></symbol>
+  <symbol id="i-gas" viewBox="0 0 24 24"><path d="M19.77 7.23l.01-.01-3.72-3.72L15 4.56l2.11 2.11c-.94.36-1.61 1.26-1.61 2.33 0 1.38 1.12 2.5 2.5 2.5.36 0 .69-.08 1-.21v7.21c0 .55-.45 1-1 1s-1-.45-1-1V14c0-1.1-.9-2-2-2h-1V5c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v16h10v-7.5h1.5v5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V9c0-.69-.28-1.32-.73-1.77zM12 10H6V5h6v5zm6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></symbol>
+  <symbol id="i-restaurant" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></symbol>
+  <symbol id="i-payments" viewBox="0 0 24 24"><path d="M19 14V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-9-1c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm13-6v11c0 1.1-.9 2-2 2H4v-2h17V7h2z"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><path d="M20 12c0-1.1.9-2 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-1.99.9-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2zm-4.42 4.8L12 14.5l-3.58 2.3 1.08-4.12-3.29-2.69 4.24-.25L12 5.8l1.54 3.95 4.24.25-3.29 2.69 1.09 4.11z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></symbol>
+  <symbol id="i-event" viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></symbol>
+  <symbol id="i-cloud-off" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-1.48 0-2.85.43-4.01 1.17l1.46 1.46C10.21 6.23 11.08 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3 0 1.13-.64 2.11-1.56 2.62l1.45 1.45C23.16 18.16 24 16.68 24 15c0-2.64-2.05-4.78-4.65-4.96zM3 5.27l2.75 2.74C2.56 8.15 0 10.77 0 14c0 3.31 2.69 6 6 6h11.73l2 2L21 20.73 4.27 4 3 5.27zM7.73 10l8 8H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h1.73z"/></symbol>
+  <symbol id="i-public" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></symbol>
+  <symbol id="i-translate" viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></symbol>
+  <symbol id="i-location-off" viewBox="0 0 24 24"><path d="M12 6.5c1.38 0 2.5 1.12 2.5 2.5 0 .74-.33 1.39-.83 1.85l3.63 3.63c.98-1.86 1.7-3.8 1.7-5.48 0-3.87-3.13-7-7-7-1.98 0-3.76.83-5.04 2.15l3.19 3.19c.46-.52 1.11-.84 1.85-.84zm4.37 9.6l-4.63-4.63-.11-.11L3.27 3 2 4.27l3.18 3.18C5.07 7.95 5 8.47 5 9c0 5.25 7 13 7 13s1.67-1.85 3.38-4.35L18.73 21 20 19.73l-3.63-3.63z"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></symbol>
+  <symbol id="i-dns" viewBox="0 0 24 24"><path d="M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zM7 19c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM7 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></symbol>
+  <symbol id="i-accessibility" viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/></symbol>
+  <symbol id="i-delete" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></symbol>
+  <symbol id="i-android" viewBox="0 0 24 24"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></symbol>
+  <symbol id="i-iphone" viewBox="0 0 24 24"><path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></symbol>
+  <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></symbol>
+  <symbol id="i-directions" viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9c-.39-.39-1.02-.39-1.41 0l-9 9c-.39.39-.39 1.02 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9c.39-.38.39-1.01 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></symbol>
+  <symbol id="i-photos" viewBox="0 0 24 24"><path d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4l2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></symbol>
+  <symbol id="i-forum" viewBox="0 0 24 24"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"/></symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/gen/badge-64.png" width="32" height="32" alt="">VANLYFE</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#product">Product</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#trust">Trust</a>
+      <a href="#deck">Pitch deck</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#download">Get the app</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Roam · Rest · Refill</span>
+      <h1>Restrooms, water and free camps near you. <em>Even offline.</em></h1>
+      <p class="lead">A free, offline-first map for people living out of a van, a car, or without housing: tap what you need, see the closest places, and get there.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#download"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Get the app</a>
+        <a class="btn" href="#deck"><svg class="i" aria-hidden="true"><use href="#i-pdf"/></svg>View the pitch deck</a>
+      </div>
+      <ul class="facts">
+        <li>Free</li>
+        <li>No ads</li>
+        <li>No tracking</li>
+        <li>iPhone and Android</li>
+        <li>5 languages</li>
+      </ul>
+    </div>
+    <div class="phones">
+      <div class="phone"><img src="assets/gen/shots/needs.webp" width="720" height="1564" alt="The app's home screen asks “What do you need?” with tiles for bathrooms and water, power and Wi-Fi, camping, gas and auto, food and help."></div>
+      <div class="phone"><img src="assets/gen/shots/map.webp" width="720" height="1564" alt="A map of downtown Los Angeles covered in colour-coded place pins, with the nearest places listed below."></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap stats-band">
+  <div class="stats">
+    <div class="stat"><b>35+</b><span>open data sources, rebuilt on a schedule</span></div>
+    <div class="stat"><b>36</b><span>kinds of place across eight needs</span></div>
+    <div class="stat"><b>50</b><span>states, from your block to the whole map</span></div>
+    <div class="stat"><b>5</b><span>languages: English, Spanish, Chinese, Vietnamese and Filipino</span></div>
+  </div>
+</div>
+
+<section class="section" id="coverage">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Coverage</span>
+      <h2>What do you need?</h2>
+      <p class="lead">Eight needs, 36 kinds of place, one map. The same tiles open the app.</p>
+    </div>
+    <div class="needs">
+      <article class="need c-bathroom"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-wc"/></svg></span><h3>Bathrooms &amp; water</h3><p>Restrooms, showers, drinking water, gyms and laundromats</p></article>
+      <article class="need c-power"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-bolt"/></svg></span><h3>Power &amp; Wi-Fi</h3><p>Outlets, charging, libraries, cafés and Wi-Fi hotspots</p></article>
+      <article class="need c-camp"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-landscape"/></svg></span><h3>Camping</h3><p>Free &amp; paid campsites, overnight parking and rest areas</p></article>
+      <article class="need c-vehicle"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-gas"/></svg></span><h3>Gas &amp; auto</h3><p>Cheapest gas, propane, dump stations and mechanics</p></article>
+      <article class="need c-food"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-restaurant"/></svg></span><h3>Food</h3><p>Pantries, free meals and markets</p></article>
+      <article class="need c-help"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg></span><h3>Help</h3><p>Shelters, benefits offices, clinics, cooling centers, pharmacies and post offices</p></article>
+      <article class="need c-money"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-payments"/></svg></span><h3>Money</h3><p>Banks and ATMs</p></article>
+      <article class="need c-activities"><span class="tile"><svg class="i" aria-hidden="true"><use href="#i-activity"/></svg></span><h3>Things to do</h3><p>Trails, bike trails, gear shops, events, theme &amp; water parks, movies, geocaches, rivers and waterfalls</p></article>
+    </div>
+    <p class="amenities">Each place carries what matters on the road: hours and whether it's open now, free or paid, ADA, 24 h, Wi-Fi, laundry, showers, fuel prices by grade, EBT acceptance, event dates, a street-level or aerial photo, and community notes and tips.</p>
+  </div>
+</section>
+
+<section class="section" id="product">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Product</span>
+      <h2>Tap what you need. See the closest places. Go.</h2>
+      <p class="lead">Finding places never needs an account, and every lookup runs on the phone, so the answer is there with or without signal.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <div class="phone"><img src="assets/gen/shots/bathrooms.webp" width="720" height="1564" loading="lazy" alt="Bathrooms and water selected: restroom and water pins on the map and the nearest restrooms listed with their distance."></div>
+        <div><span class="step-num">1</span><h3>Tap what you need</h3><p>Pick a need, or narrow it to one kind of place: restrooms, showers or water.</p></div>
+      </li>
+      <li>
+        <div class="phone"><img src="assets/gen/shots/gas.webp" width="720" height="1564" loading="lazy" alt="Gas and auto selected: fuel prices on the map and stations listed nearest first, with Cheapest, Regular and Diesel filters."></div>
+        <div><span class="step-num">2</span><h3>See the closest places</h3><p>On the map and in a list, closest first, or cheapest first for gas, by grade.</p></div>
+      </li>
+      <li>
+        <div class="phone"><img src="assets/gen/shots/detail.webp" width="720" height="1564" loading="lazy" alt="A gas station's place card with a street-level photo and a Directions button."></div>
+        <div><span class="step-num">3</span><h3>Go</h3><p>Hours, photos and directions on every place, with a street-level look before you get there.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="trips">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Trip tools</span>
+      <h2>Plan the route. Check the place.</h2>
+      <p class="lead">Places along your drive, a shortlist that works offline, and a real look at a spot before you go.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-directions"/></svg></span><h3>Along a route</h3><p>Pick a destination and see up to 100 places within ½, 1 or 5 miles of the first 300 miles, in order along the way.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg></span><h3>Saved places</h3><p>Star a place to keep it on the phone: up to 500, listed closest first, offline, with no account.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-share"/></svg></span><h3>Share</h3><p>Send a place as a link that opens it in VANLYFE, Apple Maps, Google Maps or OpenStreetMap.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-photos"/></svg></span><h3>Photos nearby</h3><p>Up to 12 photos taken within 150 m of the place, from Wikimedia Commons, Flickr and street-level imagery, pinned on the map where they were taken.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-map"/></svg></span><h3>Look around, satellite and 3D</h3><p>Google's Look around, satellite and 3D views of the place, plus its Google Maps card, right on the place card.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-forum"/></svg></span><h3>Tips from travelers</h3><p>Public, anonymous tips with helpful votes and an optional “stayed overnight” date; reports hide them.</p></article>
+    </div>
+    <p class="amenities">Also new: Search Google nearby when a place isn't in the list, Open now and Hide closed, a Free filter for camps, and laundromats, rest areas, pharmacies, post offices, rivers and waterfalls on the map.</p>
+  </div>
+</section>
+
+<section class="section" id="more">
+  <div class="wrap split">
+    <div>
+      <div class="section-head">
+        <span class="eyebrow">Beyond the map</span>
+        <h2>More than pins</h2>
+        <p class="lead">The forecast, live layers and alerts, what's on this week, and where your benefits work, for wherever the map is.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-sun"/></svg></span><h3>Today</h3><p>NWS forecast and alerts, air quality and pollen, sunrise, sunset, tonight's sky and tides, wildfires within 100 miles, earthquakes and local radio.</p></article>
+        <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span><h3>Live map layers</h3><p>Rain radar, lightning, hurricanes and wind; road cameras, earthquakes and a crime heatmap; public lands, night lights and rivers.</p></article>
+        <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg></span><h3>Alerts</h3><p>Opt-in notifications for NWS warnings, new fires within 25 miles and unhealthy air where the phone last was.</p></article>
+        <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-event"/></svg></span><h3>Events</h3><p>Everything happening this week within 50 miles, by day, as a list, a photo grid or a map. Tap one and it opens on the map.</p></article>
+        <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-card"/></svg></span><h3>Benefits</h3><p>Stores and restaurants that take SNAP near you, plus plain-language guides to CalFresh, General Relief, Medi-Cal, Oregon SNAP and the Oregon Health Plan in five languages.</p></article>
+        <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-people"/></svg></span><h3>Travelers</h3><p>Opt-in: show yourself to other travelers who share, rounded to about 1 km unless you choose Exact. Report or hide anyone.</p></article>
+      </div>
+    </div>
+    <div class="phone"><img src="assets/gen/shots/today.webp" width="720" height="1564" loading="lazy" alt="The Today tab: current weather, a coastal flood advisory, sunrise, sunset, daylight and golden hour."></div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why it wins</span>
+      <h2>Works where the signal doesn't</h2>
+      <p class="lead">Each state's places download once, a few MB, and every lookup runs on the phone with SQLite. Save map areas before you leave signal.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-cloud-off"/></svg></span><h3>Offline-first by design</h3><p>Places, filters and saved map areas keep working with no signal, and the national overview fills the map as you zoom out to the whole country.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-public"/></svg></span><h3>Open data, continuously rebuilt</h3><p>35+ sources, deduplicated by a scheduled ETL and published as static shards on a CDN. The phone does the query, so a lookup costs nothing to serve.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-camera"/></svg></span><h3>Photos before you go</h3><p>Recreation.gov and The Dyrt photos, USDA aerials for every place, street-level photos (Street View, Mapillary, KartaView, Panoramax), Wikimedia Commons and Flickr photos nearby, and community photos.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-translate"/></svg></span><h3>Five languages</h3><p>English, Spanish, Simplified Chinese, Vietnamese and Filipino, across the app, the guides and every category name.</p></article>
+    </div>
+    <p class="sources-label">Built on open data</p>
+    <ul class="sources">
+      <li>OpenStreetMap</li>
+      <li>Recreation.gov</li>
+      <li>US Forest Service</li>
+      <li>BLM</li>
+      <li>USDA SNAP</li>
+      <li>HRSA</li>
+      <li>IMLS</li>
+      <li>National Park Service</li>
+      <li>National Weather Service</li>
+      <li>GasBuddy</li>
+      <li>Eventbrite</li>
+      <li>Meetup</li>
+      <li>NOAA</li>
+      <li>USGS</li>
+      <li>Wikimedia Commons</li>
+      <li>Travel Oregon</li>
+      <li>and more</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Trust</span>
+      <h2>No ads. No tracking. Nothing to sell you.</h2>
+      <p class="lead">Read the full <a class="link" href="privacy.html">privacy policy</a>.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-location-off"/></svg></span><h3>Your location stays on your phone</h3><p>Unless you opt in to Travelers. Weather requests use coordinates rounded to 0.01°.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-person"/></svg></span><h3>Accounts are optional</h3><p>Finding places never needs one. Sign in only to add spots, post photos or share your position.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-flag"/></svg></span><h3>Community moderation</h3><p>Report a place, a photo or a traveler, block uploaders, and suggest edits that go through review.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-dns"/></svg></span><h3>Self-hosted backend</h3><p>Accounts and community posts live on our own server, with Play data-safety and App Store privacy labels filled out truthfully.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-accessibility"/></svg></span><h3>Accessible</h3><p>Automated accessibility audits on every screen: contrast, text size, touch targets, VoiceOver and TalkBack labels.</p></article>
+      <article class="card"><span class="icon"><svg class="i" aria-hidden="true"><use href="#i-delete"/></svg></span><h3>Delete any time</h3><p>Community › Settings › Account › Delete account removes your account, profile, messages, photos and traveler profile, <a class="link" href="support.html#delete-account">or ask by email</a>.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get the app</span>
+      <h2>Free on Android and iPhone</h2>
+      <p class="lead">VANLYFE is in beta. Android installs straight from this page; iPhone installs through Apple's TestFlight.</p>
+    </div>
+    <div class="platforms">
+      <article class="platform" id="android">
+        <div class="platform-head">
+          <span class="icon"><svg class="i" aria-hidden="true"><use href="#i-android"/></svg></span>
+          <div><h3>Android</h3><p class="req">Android 8.0 or newer on a 64-bit phone</p></div>
+        </div>
+        <a class="btn btn-primary" href="https://github.com/kevinpostal/vanlife-site/releases/latest/download/vanlyfe.apk"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Download for Android</a>
+        <ol>
+          <li><span>Open this page on your Android phone and tap <b>Download for Android</b>. If Chrome warns about the file, tap <b>Download anyway</b>.</span></li>
+          <li><span>Tap <b>Open</b> when the download finishes. If that button is gone, open <b>vanlyfe.apk</b> from Downloads in your Files app.</span></li>
+          <li><span>If your phone says it isn't allowed to install unknown apps from this source, tap <b>Settings</b>, turn on <b>Allow from this source</b>, then go back.</span></li>
+          <li><span>Tap <b>Install</b>, then <b>Open</b>. If Play Protect warns about the app, tap <b>More details</b>, then <b>Install anyway</b>.</span></li>
+        </ol>
+        <p class="note">To update, download and install again from this page; the new version replaces the old one and keeps your saved places. If you already have VANLYFE from Google Play, uninstall it first.</p>
+      </article>
+      <article class="platform" id="iphone">
+        <div class="platform-head">
+          <span class="icon"><svg class="i" aria-hidden="true"><use href="#i-iphone"/></svg></span>
+          <div><h3>iPhone</h3><p class="req">iOS 17 or newer, through Apple's TestFlight app</p></div>
+        </div>
+        <a class="btn btn-primary" href="https://testflight.apple.com/join/y41WyMHg"><svg class="i" aria-hidden="true"><use href="#i-iphone"/></svg>Join the iPhone beta</a>
+        <ol>
+          <li><span>On your iPhone, install <a class="link" href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a> from the App Store.</span></li>
+          <li><span>Come back to this page, tap <b>Join the iPhone beta</b>, then <b>View in TestFlight</b>.</span></li>
+          <li><span>In TestFlight, tap <b>Accept</b>, then <b>Install</b>.</span></li>
+        </ol>
+        <p class="note">New versions show up in TestFlight with an <b>Update</b> button. Each beta version stops working 90 days after it comes out.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="deck">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">For partners</span>
+      <h2>The pitch deck</h2>
+      <p class="lead">The problem, the product, coverage, trip tools, live layers, why it wins, trust, and where VANLYFE goes next, in eleven slides.</p>
+    </div>
+    <div class="deck-stage">
+      <div class="deck-track" tabindex="0" role="region" aria-label="Pitch deck slides">
+        <figure class="deck-slide" id="slide-1"><img src="assets/gen/deck/slide-1.jpg" width="1600" height="1237" alt="Slide 1, cover: VANLYFE, Roam · Rest · Refill. Restrooms, showers, water, free camps, cheap gas and help near you, even offline."></figure>
+        <figure class="deck-slide" id="slide-2"><img src="assets/gen/deck/slide-2.jpg" width="1600" height="1237" loading="lazy" alt="Slide 2, the problem: living on the road is a daily scavenger hunt, with answers scattered across reviews, forums and paid apps."></figure>
+        <figure class="deck-slide" id="slide-3"><img src="assets/gen/deck/slide-3.jpg" width="1600" height="1237" loading="lazy" alt="Slide 3, the product: tap what you need, see the closest places, go."></figure>
+        <figure class="deck-slide" id="slide-4"><img src="assets/gen/deck/slide-4.jpg" width="1600" height="1237" loading="lazy" alt="Slide 4, coverage: eight needs, 36 kinds of place, one map."></figure>
+        <figure class="deck-slide" id="slide-5"><img src="assets/gen/deck/slide-5.jpg" width="1600" height="1237" loading="lazy" alt="Slide 5, the product: more than pins, with Today, Events, Benefits and Travelers."></figure>
+        <figure class="deck-slide" id="slide-6"><img src="assets/gen/deck/slide-6.jpg" width="1600" height="1237" loading="lazy" alt="Slide 6, the product: plan the route and check the place, with Along a route, saved places, sharing, photos nearby, Look around, satellite and 3D views, and traveler tips."></figure>
+        <figure class="deck-slide" id="slide-7"><img src="assets/gen/deck/slide-7.jpg" width="1600" height="1237" loading="lazy" alt="Slide 7, the product: live layers for weather, roads and land, plus alerts and shortcuts."></figure>
+        <figure class="deck-slide" id="slide-8"><img src="assets/gen/deck/slide-8.jpg" width="1600" height="1237" loading="lazy" alt="Slide 8, why it wins: works where the signal doesn't. 35+ open data sources, 36 kinds of place, $0 per lookup."></figure>
+        <figure class="deck-slide" id="slide-9"><img src="assets/gen/deck/slide-9.jpg" width="1600" height="1237" loading="lazy" alt="Slide 9, trust: no ads, no tracking, nothing to sell you."></figure>
+        <figure class="deck-slide" id="slide-10"><img src="assets/gen/deck/slide-10.jpg" width="1600" height="1237" loading="lazy" alt="Slide 10, status: what shipped in version 1.0, what comes next, and the ask."></figure>
+        <figure class="deck-slide" id="slide-11"><img src="assets/gen/deck/slide-11.jpg" width="1600" height="1237" loading="lazy" alt="Slide 11: VANLYFE, Roam · Rest · Refill, with Kevin Postal's contact details."></figure>
+      </div>
+      <button class="deck-btn prev" type="button" aria-label="Previous slide" disabled><svg class="i" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+      <button class="deck-btn next" type="button" aria-label="Next slide"><svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+    </div>
+    <ol class="deck-thumbs">
+      <li><a href="#slide-1" aria-current="true"><img src="assets/gen/deck/thumb-1.jpg" width="400" height="310" loading="lazy" alt="Slide 1"></a></li>
+      <li><a href="#slide-2"><img src="assets/gen/deck/thumb-2.jpg" width="400" height="310" loading="lazy" alt="Slide 2"></a></li>
+      <li><a href="#slide-3"><img src="assets/gen/deck/thumb-3.jpg" width="400" height="310" loading="lazy" alt="Slide 3"></a></li>
+      <li><a href="#slide-4"><img src="assets/gen/deck/thumb-4.jpg" width="400" height="310" loading="lazy" alt="Slide 4"></a></li>
+      <li><a href="#slide-5"><img src="assets/gen/deck/thumb-5.jpg" width="400" height="310" loading="lazy" alt="Slide 5"></a></li>
+      <li><a href="#slide-6"><img src="assets/gen/deck/thumb-6.jpg" width="400" height="310" loading="lazy" alt="Slide 6"></a></li>
+      <li><a href="#slide-7"><img src="assets/gen/deck/thumb-7.jpg" width="400" height="310" loading="lazy" alt="Slide 7"></a></li>
+      <li><a href="#slide-8"><img src="assets/gen/deck/thumb-8.jpg" width="400" height="310" loading="lazy" alt="Slide 8"></a></li>
+      <li><a href="#slide-9"><img src="assets/gen/deck/thumb-9.jpg" width="400" height="310" loading="lazy" alt="Slide 9"></a></li>
+      <li><a href="#slide-10"><img src="assets/gen/deck/thumb-10.jpg" width="400" height="310" loading="lazy" alt="Slide 10"></a></li>
+      <li><a href="#slide-11"><img src="assets/gen/deck/thumb-11.jpg" width="400" height="310" loading="lazy" alt="Slide 11"></a></li>
+    </ol>
+    <div class="deck-bar">
+      <span class="deck-count" aria-live="polite">Slide 1 of 11</span>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="VANLYFE-pitch.pdf"><svg class="i" aria-hidden="true"><use href="#i-pdf"/></svg>Download PDF · 4.1 MB</a>
+        <a class="btn" href="mailto:kevindpostal@gmail.com?subject=VANLYFE"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>Contact Kevin</a>
+      </div>
+    </div>
+    <div class="ask">
+      <h3>The ask</h3>
+      <p>Introductions to outreach organizations and vanlife communities for the launch, feedback on the benefits guides from people who use these programs, and partners with campground or fuel data to license.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./"><img src="assets/gen/badge-64.png" width="32" height="32" alt="">VANLYFE</a>
+        <p class="tagline">Roam · Rest · Refill</p>
+        <p>A free, offline-first map of restrooms, water, camps, gas and help across the US.</p>
+      </div>
+      <nav aria-label="Product"><h2 class="footer-h">Product</h2><ul><li><a href="#coverage">Coverage</a></li><li><a href="#more">Today &amp; Events</a></li><li><a href="#download">Get the app</a></li><li><a href="#deck">Pitch deck</a></li></ul></nav>
+      <nav aria-label="Support"><h2 class="footer-h">Support</h2><ul><li><a href="support.html">Help &amp; FAQ</a></li><li><a href="support.html#delete-account">Delete your account</a></li><li><a href="mailto:kevindpostal@gmail.com">Contact</a></li></ul></nav>
+      <nav aria-label="Legal"><h2 class="footer-h">Legal</h2><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Kevin Postal</span><span>Map data © OpenStreetMap contributors</span></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var track = document.querySelector(".deck-track");
+  if (!track) return;
+  var slides = track.querySelectorAll(".deck-slide");
+  var thumbs = document.querySelectorAll(".deck-thumbs a");
+  var count = document.querySelector(".deck-count");
+  var prev = document.querySelector(".deck-btn.prev");
+  var next = document.querySelector(".deck-btn.next");
+  var gap = 16, current = 0, pending = false;
+
+  function step() { return slides[0].offsetWidth + gap; }
+  function go(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    track.scrollTo({ left: i * step(), behavior: "smooth" });
+  }
+  function update() {
+    pending = false;
+    var i = Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / step())));
+    if (i === current && count.textContent) return;
+    current = i;
+    count.textContent = "Slide " + (i + 1) + " of " + slides.length;
+    thumbs.forEach(function (t, n) { t.setAttribute("aria-current", n === i ? "true" : "false"); });
+    prev.disabled = i === 0;
+    next.disabled = i === slides.length - 1;
+  }
+  track.addEventListener("scroll", function () {
+    if (!pending) { pending = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  prev.addEventListener("click", function () { go(current - 1); });
+  next.addEventListener("click", function () { go(current + 1); });
+  thumbs.forEach(function (t, n) {
+    t.addEventListener("click", function (e) { e.preventDefault(); go(n); });
+  });
+  track.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") { e.preventDefault(); go(current + 1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(current - 1); }
+  });
+})();
+</script>
+</body>
+</html>

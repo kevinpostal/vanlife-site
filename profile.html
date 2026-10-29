@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VANLYFE</title>
+<meta name="theme-color" content="#0f1115">
+<link rel="icon" href="assets/gen/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/gen/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/gen/badge-64.png" width="32" height="32" alt="">VANLYFE</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#product">Product</a>
+      <a href="./#coverage">Coverage</a>
+      <a href="./#trust">Trust</a>
+      <a href="./#deck">Pitch deck</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="./#download">Get the app</a>
+  </div>
+</header>
+<main id="main" class="page"><div class="wrap prose">
+<h1 id="name">Shared profile</h1>
+<p id="incomplete" hidden>This link is incomplete.</p>
+<div id="links" class="stack" hidden>
+  <a id="open-app" class="btn btn-primary" href="#">Open in VANLYFE</a>
+</div>
+<p class="muted">Shared from VANLYFE</p>
+</div></main>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var id = (params.get("id") || "").trim().toLowerCase();
+  var name = (params.get("name") || "").trim();
+  var valid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(id);
+  if (!valid) {
+    document.getElementById("name").hidden = true;
+    document.getElementById("incomplete").hidden = false;
+    return;
+  }
+  if (name) {
+    document.getElementById("name").textContent = name;
+    document.title = name + " · VANLYFE";
+  }
+  document.getElementById("open-app").href = "vanlyfe://profile?id=" + encodeURIComponent(id);
+  document.getElementById("links").hidden = false;
+})();
+</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./"><img src="assets/gen/badge-64.png" width="32" height="32" alt="">VANLYFE</a>
+        <p class="tagline">Roam · Rest · Refill</p>
+        <p>A free, offline-first map of restrooms, water, camps, gas and help across the US.</p>
+      </div>
+      <nav aria-label="Product"><h2 class="footer-h">Product</h2><ul><li><a href="./#coverage">Coverage</a></li><li><a href="./#more">Today &amp; Events</a></li><li><a href="./#download">Get the app</a></li><li><a href="./#deck">Pitch deck</a></li></ul></nav>
+      <nav aria-label="Support"><h2 class="footer-h">Support</h2><ul><li><a href="support.html">Help &amp; FAQ</a></li><li><a href="support.html#delete-account">Delete your account</a></li><li><a href="mailto:kevindpostal@gmail.com">Contact</a></li></ul></nav>
+      <nav aria-label="Legal"><h2 class="footer-h">Legal</h2><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Kevin Postal</span><span>Map data © OpenStreetMap contributors</span></div>
+  </div>
+</footer>
+</body>
+</html>
