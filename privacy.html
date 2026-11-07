@@ -32,6 +32,7 @@
 
 <h2>Your location</h2>
 <p>Your location is used on your phone to find places near you. Your position is shown to other people only if you turn on Show me on the map (Community › Settings › Travelers) or send it in a message (see Messages). With Show me on the map on, the app sends your position to our server, rounded to about 1 km unless you choose Exact, and other travelers who also share can see it with your display name and status for up to 6 hours after your last update. If you also turn on Keep sharing when the app is closed, the app keeps sending it while the app is closed (when you move about 500 m on iPhone, about every 15 minutes on Android). Turning sharing off, signing out or deleting your account removes your position at once. Features that look things up near you send coordinates to the services described below.</p>
+<p>Check in nearby uses a foreground location fix only after you choose that action, to suggest mapped places. The fix is held only while the picker is open; only the place you choose is shared when you explicitly post, not the raw fix, accuracy or distance. Choosing a place does not post it. This feature does not enable or change live or background location sharing. You can also check in from a place's details without granting location access.</p>
 <p>When you search for a place by name or address, the search goes to Apple's MapKit search service on iPhone, or to Android's built-in Geocoder on Android (on most Android phones, a Google service). When you save an offline map area, the centre of that area goes to the same service to name it.</p>
 <p>On Android, if you add the Open nearby home-screen widget and have allowed location access All the time, the widget also gets your location from time to time while the app is closed, to list the closest open places. The widget uses that location only on your phone.</p>
 <p>The Today tab shows the weather where you are. To do that, the app sends the coordinates of the area you are looking at (your location, unless you searched somewhere else) to the US National Weather Service (api.weather.gov), rounded to about 10 meters. If you tap Load live map, the same coordinates, rounded to about 100 meters, go to Windy (windy.com). No account details or device identifiers are sent with them.</p>
@@ -51,6 +52,8 @@
 <li>Spots you add and edits you suggest are reviewed before they appear in the public map data.</li>
 <li>Photos you add are public as soon as they upload, and anyone can report them.</li>
 <li>Your profile (name, status, rig, bio and photo) is visible to every signed-in member, and any of them can report it.</li>
+<li>Check-ins share the selected place, optional note and posting time with you and your currently accepted friends only. Current friends can see older check-ins; unfriending or blocking removes access on subsequent reads. Check-ins are self-reported history, not live presence, and stay until you delete them. You can delete your own check-ins, including ones under review.</li>
+<li>Reporting a check-in hides it from friends and sends a snapshot to moderators. Moderators can access reported check-ins, not browse unreported private posts. Reported snapshots remain for moderation after the post or account is deleted.</li>
 <li>Reports you send are stored with your user ID when you're signed in.</li>
 </ul>
 
@@ -104,7 +107,7 @@
 <p>Street View, Look around, Satellite, the 3D view, Mapillary, KartaView, Panoramax, Wikimedia Commons, Wikipedia's place and map-layer lookups, the Crime layer, Crime nearby and the On Google Maps card receive the coordinates of the place you are looking at, or of the map area on screen, not your own location. Search Google nearby sends the map's centre, which is your location when the map is centred on you. Links such as Open in Windy or Open in Zoom Earth open in your browser and pass along the coordinates shown on screen.</p>
 
 <h2>Deleting your data</h2>
-<p>In the app, open Community › Settings › Account and tap Delete account. This removes your account, your profile and its photo, your friends list, your one-to-one conversations, the messages you sent, your photos, your push tokens and your traveler profile and position. Spots, edits, tips and other place information you posted stay, without any link to you. Without the app, you can ask by email as described under <a href="support.html#delete-account">Delete your account</a>. Clearing the app's storage, or deleting the app, removes everything stored on the phone.</p>
+<p>In the app, open Community › Settings › Account and tap Delete account. This removes your account, your profile and its photo, your friends list, your check-ins, your one-to-one conversations, the messages you sent, your photos, your push tokens and your traveler profile and position. Reported check-in and message snapshots remain for moderation, with deleted account and post links removed. Spots, edits, tips and other place information you posted stay, without any link to you. Without the app, you can ask by email as described under <a href="support.html#delete-account">Delete your account</a>. Clearing the app's storage, or deleting the app, removes everything stored on the phone.</p>
 
 <h2>Children</h2>
 <p>VANLYFE is not directed at children under 13.</p>
@@ -112,7 +115,7 @@
 <h2>Contact</h2>
 <p>Questions about this policy: <a href="mailto:kevindpostal@gmail.com">kevindpostal@gmail.com</a>.</p>
 
-<p class="muted">Effective date: November 5, 2026.</p>
+<p class="muted">Effective date: November 7, 2026.</p>
 </div></main>
 <footer class="site-footer">
   <div class="wrap">
